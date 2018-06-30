@@ -32,8 +32,8 @@ $(function() {
          */
          it('URL is defined and is not empty', function() {
           allFeeds.forEach(function(feed) {
-            expect(feed.url).toBeDefined();
-            expect(feed.url).not.toBe(0);
+            expect(feed.url).toBeDefined(); //this checks whether or not the url has been defined
+            expect(feed.url).not.toBe(0); //expects the url not to be empty
           });
          });
 
@@ -43,8 +43,8 @@ $(function() {
          */
          it('Name is defined', function() {
            allFeeds.forEach(function(feed) {
-             expect(feed.name).toBeDefined();
-             expect(feed.name).not.toBe(0);
+             expect(feed.name).toBeDefined(); //checks if there are feed names
+             expect(feed.name).not.toBe(0); //expects the feed name not to be empty
            });
          });
     });
@@ -56,7 +56,7 @@ $(function() {
        * hiding/showing of the menu element.
        */
        it('The menu element is hidden by default', function() {
-        expect($('body').hasClass('menu-hidden')).toEqual(true);
+        expect($('body').hasClass('menu-hidden')).toEqual(true); //i found the class 'menu-hidden' in index.html
        });
 
        /* TODO: Write a test that ensures the menu changes
@@ -66,7 +66,7 @@ $(function() {
         */
         it('Menu changes visibility when menu icon is clicked', function() {
           $('.menu-icon-link').click();
-          expect($('body').hasClass('menu-hidden')).not.toBe(true);
+          expect($('body').hasClass('menu-hidden')).not.toBe(true); //when the user clicks on the hamburger icon, then the hidden menu opens
 
           $('.menu-icon-link').click();
           expect($('body').hasClass('menu-hidden')).toBe(true);
@@ -88,7 +88,7 @@ $(function() {
          });
        });
        it('loadFeed function called, defined if entry has at least 1 entry element', function(done) {
-          expect($('.feed .entry')).not.toBeUndefined();
+          expect($('.feed .entry')).not.toBeUndefined(); //this is defining the .feed and .entry
           done();
        });
     });
@@ -107,7 +107,7 @@ $(function() {
 
            loadFeed(1, function() {
              done();
-           });
+           }); //this is comparing the first feed loaded to the second feed loaded to see if they are different
          });
        });
        it('When new feed loaded, content changes', function(done) {
